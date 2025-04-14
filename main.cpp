@@ -4,7 +4,22 @@
 #include <glib.h>
 
 
+	
+static void ButtonShow(GtkWidget* gtk_window_, GtkButton* gtk_button) {  
+   gtk_window_set_child(GTK_WINDOW(gtk_window_), GTK_WIDGET(gtk_button));  
+}
 
+
+static void ButtonClick ( GtkWidget* gtk_window_ , GtkButton* gtk_button ) {
+	g_print ( "Button Clicked\n" );
+}
+static void LabelShow (GtkWidget* gtk_window_, const char* string_) {
+
+	GtkWidget* label = gtk_label_new (string_);
+
+	gtk_window_set_child ( GTK_WINDOW ( gtk_window_ ) , label );
+
+}
 
 static void on_activate(GtkApplication* app, gpointer user_data) {
     GtkWidget* window = gtk_application_window_new(app);
@@ -27,6 +42,8 @@ static void on_activate(GtkApplication* app, gpointer user_data) {
 	
 	GtkWidget* label = gtk_label_new( utf8_string );
 	gtk_window_set_child ( GTK_WINDOW ( window ) , label );
+
+	LabelShow (window, "helo");
 
     GtkCssProvider* provider = gtk_css_provider_new();
     gtk_css_provider_load_from_string(provider,
