@@ -4,15 +4,31 @@
 #include <glib.h>
 
 
+static void ComponentHandler ( GtkWidget* gtk_window_ , GtkWidget* gtk_component ) {
+	GError* error = NULL;
 	
-static void ButtonShow(GtkWidget* gtk_window_, GtkButton* gtk_button) {  
+	
+	gtk_window_set_child ( GTK_WINDOW ( gtk_window_ ) , GTK_WIDGET ( gtk_component ) );
+
+
+}
+
+
+
+
+
+	
+static void ButtonShow(GtkWidget* gtk_window_, GtkWidget* gtk_button) {  
    gtk_window_set_child(GTK_WINDOW(gtk_window_), GTK_WIDGET(gtk_button));  
 }
 
 
-static void ButtonClick ( GtkWidget* gtk_window_ , GtkButton* gtk_button ) {
-	g_print ( "Button Clicked\n" );
+static void ButtonClick ( GtkButton* button , gpointer user_data ) {
+	gtk_button_set_label ( button , "Clicked" );
 }
+
+
+
 static void LabelShow (GtkWidget* gtk_window_, const char* string_) {
 
 	GtkWidget* label = gtk_label_new (string_);
@@ -20,6 +36,9 @@ static void LabelShow (GtkWidget* gtk_window_, const char* string_) {
 	gtk_window_set_child ( GTK_WINDOW ( gtk_window_ ) , label );
 
 }
+
+
+
 
 static void on_activate(GtkApplication* app, gpointer user_data) {
     GtkWidget* window = gtk_application_window_new(app);
@@ -44,6 +63,10 @@ static void on_activate(GtkApplication* app, gpointer user_data) {
 	gtk_window_set_child ( GTK_WINDOW ( window ) , label );
 
 	LabelShow (window, "helo");
+
+	GtkWidget* button = gtk_button_new_with_label ( "Activate" );
+	ButtonShow ( window , button );
+	g_signal_connect( button , "clicked" , G_CALLBACK ( ButtonClick ) , NULL );
 
     GtkCssProvider* provider = gtk_css_provider_new();
     gtk_css_provider_load_from_string(provider,

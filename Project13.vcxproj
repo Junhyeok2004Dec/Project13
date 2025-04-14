@@ -156,10 +156,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="GtkButton.cpp" />
+    <ClCompile Include="IOHandler.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Error.h" />
+    <ClInclude Include="GtkButton.h" />
+    <ClInclude Include="IOHandler.h" />
     <ClInclude Include="NumberSystem.h" />
     <ClInclude Include="Packet.h" />
     <ClInclude Include="State.h" />
