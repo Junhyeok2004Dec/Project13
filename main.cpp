@@ -13,10 +13,6 @@ static void ComponentHandler ( GtkWidget* gtk_window_ , GtkWidget* gtk_component
 
 }
 
-
-
-
-
 	
 static void ButtonShow(GtkWidget* gtk_window_, GtkWidget* gtk_button) {  
    gtk_window_set_child(GTK_WINDOW(gtk_window_), GTK_WIDGET(gtk_button));  
@@ -97,6 +93,7 @@ int main(int argc, char** argv)
 	GtkApplication* app;
 	int status;
 
+	gtk_init();
 	PangoFontDescription* font_desc = pango_font_description_from_string("Malgun Gothic 12");
 	pango_font_description_free(font_desc);
 

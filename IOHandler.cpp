@@ -5,7 +5,3 @@
 #include "IOHandler.h"
 
 
-IoHandler ( ) {
-
-
-}

@@ -1,14 +1,6 @@
 #pragma once
 
 #include "State.h"
-typedef struct Packet {
-	
-	PacketHeader* header;
-
-	size_t size;
-	size_t parity_bit;
-
-};
 
 typedef struct PacketHeader {
 
@@ -19,3 +11,13 @@ typedef struct PacketHeader {
 	size_t packet_id;
 
 };
+typedef struct Packet {
+	
+	PacketHeader* header;
+
+	size_t size;
+	size_t parity_bit;
+
+};
+
+
