@@ -51,9 +51,23 @@ typedef struct Movement {
 	Point3d velocity;
 	Point3d acceleration;
 };
+typedef struct CarState {
+	int id;
+	char* name;
+	StateCode state_code;
+	Pose pose;
+	TwistWithCovariance twist;
+	Point3d acceleration;
+	Point3d jerk;
+	double time;
+};
 
 typedef struct State {
+
 	CarState state;
+	Movement movement;
+	Odometry odometry;
+	
 
 
 };
@@ -62,18 +76,6 @@ typedef struct State {
 typedef struct SystemState {
 
 	char* car_name[]; // 현재 제어하고 있는 차량의 목록
-
-
-};
-
-typedef struct CarState {
-
-	int id;
-
-	double time;
-
-	double
-
 
 
 };
