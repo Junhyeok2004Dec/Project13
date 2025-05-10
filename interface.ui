@@ -1,0 +1,40 @@
+<!-- interface.ui -->
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+
+  <object class="GtkApplicationWindow" id="main_window">
+    <property name="default-width">1280</property>
+    <property name="default-height">720</property>
+    <property name="title">Jejunu 가나다 abab 사다나 Β</property>
+
+    <child>
+      <object class="GtkBox" id="main_box">
+        <property name="orientation">vertical</property>
+        <property name="spacing">10</property>
+        <property name="margin-top">20</property>
+        <property name="margin-bottom">20</property>
+        <property name="margin-start">20</property>
+        <property name="margin-end">20</property>
+
+        <child>
+          <object class="GtkLabel" id="main_label">
+            <property name="label">Hello World</property>
+          </object>
+        </child>
+
+        <child>
+          <object class="GtkButton" id="main_button">
+            <property name="label">Activate</property>
+          </object>
+        </child>
+		  <child>
+			  <object class="GtkButton" id="exit_button">
+				  <property name="label">Exit</property>
+			  </object>
+		  </child>	  
+	
+      </object>
+    </child>
+  </object>
+</interface>
