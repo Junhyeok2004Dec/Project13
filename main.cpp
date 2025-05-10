@@ -6,7 +6,7 @@ static void ButtonClick ( GtkButton* button , gpointer user_data ) {
 }
 
 
-static gboolean on_window_close ( GtkWindow* window , gpointer user_data ) {
+static gboolean on_window_close ( GtkButton* button, gpointer user_data ) {
 
 
 	g_application_quit ( G_APPLICATION ( user_data ) );
@@ -39,7 +39,7 @@ static void on_activate ( GtkApplication* app , gpointer user_data ) {
 
 
 	g_signal_connect ( button , "clicked" , G_CALLBACK ( ButtonClick ) , NULL );
-	g_signal_connect ( button2 , "clicked" , G_CALLBACK ( on_window_close ) , window );
+	g_signal_connect ( button2 , "clicked" , G_CALLBACK ( on_window_close ) , NULL,  window );
 
 	// CSS 설정
 	GtkCssProvider* provider = gtk_css_provider_new ( );
@@ -60,6 +60,10 @@ int main ( int argc , char** argv ) {
 
 	GtkApplication* app;
 	int status;
+
+	// std::thread ros_thread ( ros2_thread_func ); // 
+
+
 
 	app = gtk_application_new ( "com.gtk.GtkApp" , G_APPLICATION_FLAGS_NONE );
 	g_signal_connect ( app , "activate" , G_CALLBACK ( on_activate ) , NULL );
