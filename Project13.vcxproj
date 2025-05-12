@@ -161,7 +161,6 @@
     <ClCompile Include="GtkButton.cpp" />
     <ClCompile Include="IOHandler.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="RosNode.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Error.h" />
@@ -169,7 +168,6 @@
     <ClInclude Include="IOHandler.h" />
     <ClInclude Include="NumberSystem.h" />
     <ClInclude Include="Packet.h" />
-    <ClInclude Include="ros_node.hpp" />
     <ClInclude Include="State.h" />
     <ClInclude Include="TextEnumrate.h" />
   </ItemGroup>

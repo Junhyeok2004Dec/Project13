@@ -1,12 +1,12 @@
-<!-- interface.ui -->
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- interface.ui -->
 <interface>
   <requires lib="gtk" version="4.0"/>
 
   <object class="GtkApplicationWindow" id="main_window">
     <property name="default-width">1280</property>
     <property name="default-height">720</property>
-    <property name="title">Jejunu 가나다 abab 사다나 Β</property>
+    <property name="title">제주대학교 자율주행 서비스</property>
 
     <child>
       <object class="GtkBox" id="main_box">
@@ -18,21 +18,36 @@
         <property name="margin-end">20</property>
 
         <child>
-          <object class="GtkLabel" id="main_label">
-            <property name="label">Hello World</property>
+          <object class="GtkLabel" id="title_label">
+            <property name="label">제주대학교 자율주행서비스</property>
+			  
           </object>
         </child>
 
         <child>
-          <object class="GtkButton" id="main_button">
-            <property name="label">Activate</property>
+          <object class="GtkButton" id="car_connection_button">
+            <property name="label">자동차 접속</property>
           </object>
         </child>
+
+		<child>
+			<object class="GtkButton" id="car_register_button">
+				<property name="label">자동차 등록</property>
+			</object>
+		</child>
+
 		  <child>
-			  <object class="GtkButton" id="exit_button">
-				  <property name="label">Exit</property>
+			  <object class="GtkLabel" id="text_display_1_label">
+				  <property name="label">자동차 수정기능은  차량에 접속하신 이후 사용하실 수 있습니다.</property>"
 			  </object>
-		  </child>	  
+		  </child>
+		  
+		  
+		<child>
+			<object class="GtkButton" id="exit_button">
+				<property name="label">Exit</property>
+			</object>
+		</child>	  
 	
       </object>
     </child>
